@@ -13,8 +13,14 @@ class App
         // var_dump($url);
 
         // CONTROLLER
+        // mengecek apakah url nya null, jika null, maka di versi terbaru akan error
+        if ($url == null) {
+            $url = [$this->controller];
+        }
+
         // mengecek apakah urlnya sesuai dengan controller
-        if (file_exists('../app/controllers/' . $url[0] . '.php')) { // masih error jika tidak dimasukkan
+        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+            // masih error jika tidak dimasukkan
             $this->controller = $url[0]; // controlollernya tanpa '$'
             unset($url[0]);
         }
