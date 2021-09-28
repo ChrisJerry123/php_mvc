@@ -1,5 +1,8 @@
 <?php
 
 class Controller{
-    // To do Here
+    public function view($view, $data = [])
+    {
+        # code...
+    }
 }
