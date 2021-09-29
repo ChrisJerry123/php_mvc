@@ -34,6 +34,7 @@ class Mahasiswa_model
     private $dbh; // database handler
     private $stmt; // query
 
+    /* CONSTRUCTORNYA DI PINDAH CLASS DATABASE AGAR LEBIH AMAN
     public function __construct()
     {
         // jangan menyimpan file database dan user di file construct
@@ -48,6 +49,7 @@ class Mahasiswa_model
             die($e->getMessage());
         }
     }
+    */
 
     public function getAllMahasiswa()
     {
