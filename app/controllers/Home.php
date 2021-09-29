@@ -9,10 +9,11 @@ class Home extends Controller // inheritance dari controller
 
         // data yang akan dikirim (dalam hal ini adalah judul di title)
         $data['judul'] = "Home";
+        $data['nama'] = $this->model('User_model')->getUser();
 
         // views yang akan di load
         $this->view('templates/header', $data);
-        $this->view("home/index"); // artinya: file yg ada di folder views, lalu folder home, lalu di file index.php
+        $this->view("home/index", $data); // artinya: file yg ada di folder views, lalu folder home, lalu di file index.php
         $this->view('templates/footer');
     }
 }

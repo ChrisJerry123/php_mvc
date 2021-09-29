@@ -11,6 +11,7 @@ class About extends Controller
     }
     */
 
+    // function / method index pada about
     public function index($nama = "Admin", $pekerjaan = "pengguna baru", $umur = 30)
     {
         // bikin data berupa array assosiatif untuk dikirmkan ke view. Datanya berdasarkan parameter yang dikirim
@@ -21,6 +22,7 @@ class About extends Controller
         // untuk data judul di title
         $data['judul'] = "About Me";
 
+        // tampilan 
         $this->view('templates/header', $data);
         $this->view('about/index', $data);
         $this->view('templates/footer');
