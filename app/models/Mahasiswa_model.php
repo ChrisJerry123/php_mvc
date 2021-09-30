@@ -30,10 +30,10 @@ class Mahasiswa_model
         ]
     ];
     */
-
+    /* 
     private $dbh; // database handler
     private $stmt; // query
-
+ */
     /* CONSTRUCTORNYA DI PINDAH CLASS DATABASE AGAR LEBIH AMAN
     public function __construct()
     {
@@ -51,14 +51,35 @@ class Mahasiswa_model
     }
     */
 
+    private $table = 'mahasiswa';
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Database;
+        // print_r($this->db->resultSet());
+    }
+
     public function getAllMahasiswa()
     {
+
         // ketika menampilkan data tanpa database, cukup gunakan:
         // return $this->mhs;
 
+        /* 
         // menggunakan data dari database menggunakan PDO:
         $this->stmt = $this->dbh->prepare('SELECT * FROM mahasiswa');
         $this->stmt->execute(); // kalau PDO harus 2kali biar aman
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC); // agar datanya dikembalikan sebagai array assosiatif
+         */
+        $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->resultSet();
+    }
+
+    public function getMahasiswaById($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id'); // $id-nya (variable-nya) tidak langsung dimasukkan untuk mencegah sql injection
+        $this->db->bind('id', $id);
+        return $this->db->single(); // pakai single jika data yang ditampilkan hanya satu
     }
 }

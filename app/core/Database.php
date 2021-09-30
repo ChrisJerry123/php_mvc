@@ -11,7 +11,8 @@ class Database
 
     public function __construct()
     {
-        $dsn = "mysql:host=" . $this->host . "; db_name=" . $this->db_name;
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name; // Gara gara perbedaan dbname(benar) dan db_name(salah). nyari errornya susah
+        // $dsn = 'mysql:host=localhost;db_name=php_mvc';
 
         // selain membutuhkan localhost,name, user, pass, PDO juga butuh option berupa array:
         $option = [
@@ -20,8 +21,9 @@ class Database
         ];
 
         try {
-            $this->dbh = new PDO($dsn, $this->user, $this->pass); // Databasenya sudah dibikin secara general, jadi sekali ganti database, tidak perlu mengganti ke bawahnya lagi
+            $this->dbh = new PDO($dsn, $this->user, $this->pass, $option); // Databasenya sudah dibikin secara general, jadi sekali ganti database, tidak perlu mengganti ke bawahnya lagi
         } catch (PDOException $e) {
+            // echo 'Connection Failed: ' . $e->getMessage();
             die($e->getMessage());
         }
     }
@@ -73,6 +75,6 @@ class Database
     public function single()
     {
         $this->execute();
-        $this->stmt->fetch(PDO::FETCH_ASSOC);
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
