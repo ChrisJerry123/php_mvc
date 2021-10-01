@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-lg-6">
             <!-- MODAL BUTTON -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+            <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#formModal">
                 Tambah Mahasiswa
             </button>
             <br><br>
@@ -22,8 +22,11 @@
             <!-- Tampil data Mahasiswa -->
             <ul class="list-group">
                 <?php foreach ($data['mhs'] as $mhs) : ?>
+                    <!-- Nama Mahasiswa -->
                     <li class="list-group-item "><?php echo $mhs['nama']; ?>
+                        <!-- Tombol aksi crud-->
                         <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Apakah anda yankin ingin menghapus mahasiswa ini?'); ">Hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-secondary float-right ml-1 mr-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?php echo $mhs['id']; ?>">Ubah</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right ml-1 mr-1">Detail</a>
                     </li>
                 <?php endforeach; ?>
@@ -41,7 +44,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="judulModal">Tambah Mahasiswa</h5>
+                <h5 class="modal-title" id="formModalLabel">Tambah Mahasiswa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
