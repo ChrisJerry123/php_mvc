@@ -1,6 +1,15 @@
 <div class="container mt-3">
+
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
+            <!-- Samakan columnnya dengan column yang ada di modal button -->
+            <!-- Memanggil kelas Flasher -->
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
             <!-- MODAL BUTTON -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
                 Tambah Mahasiswa
