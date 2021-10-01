@@ -77,4 +77,9 @@ class Database
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function rowCount() // rowcount yang ini yang kita inisiasi
+    {
+        return $this->stmt->rowCount(); // rowCount yang ini berasal dari PDO
+    }
 }

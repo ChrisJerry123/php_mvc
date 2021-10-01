@@ -82,4 +82,19 @@ class Mahasiswa_model
         $this->db->bind('id', $id);
         return $this->db->single(); // pakai single jika data yang ditampilkan hanya satu
     }
+
+    public function tambahDataMahasiswa($data)
+    {
+        $query = "INSERT INTO mahasiswa VALUES ('', :nama, :nip, :jurusan, :email)"; // yang pertama dikosongkan karena itu adalah 'id' yang di auto-increament
+
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('nip', $data['nip']);
+        $this->db->bind('jurusan', $data['jurusan']);
+        $this->db->bind('email', $data['email']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
