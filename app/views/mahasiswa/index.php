@@ -22,8 +22,9 @@
             <!-- Tampil data Mahasiswa -->
             <ul class="list-group">
                 <?php foreach ($data['mhs'] as $mhs) : ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><?php echo $mhs['nama']; ?>
-                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary">Detail</a>
+                    <li class="list-group-item "><?php echo $mhs['nama']; ?>
+                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Apakah anda yankin ingin menghapus mahasiswa ini?'); ">Hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right ml-1 mr-1">Detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
