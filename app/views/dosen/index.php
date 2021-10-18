@@ -11,7 +11,7 @@
     <div class="row mb-3">
         <div class="col-lg-6">
             <!-- MODAL BUTTON -->
-            <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#formModal">
+            <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#formModal"><!-- kalau error, coba data-toggle dan data-target nilainya ditambah dosen -->
                 Tambah Mahasiswa
             </button>
             <!-- END MODAL BUTTON -->
@@ -21,9 +21,9 @@
     <div class="row mb-3">
         <div class="col-lg-6">
             <!-- FORM CARI -->
-            <form method="post" action="<?= BASEURL; ?>/mahasiswa/cari">
+            <form method="post" action="<?= BASEURL; ?>/dosen/cari">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari mahasiswa" name="keyword" id="keyword" autocomplete="off">
+                    <input type="text" class="form-control" placeholder="Cari Dosen" name="keyword" id="keyword" autocomplete="off"> <!-- kalau error, coba name dan id nya ber-nilai: 'keywordDosen' -->
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
                     </div>
@@ -32,7 +32,7 @@
             <!-- END FORM CARI -->
         </div>
     </div>
-
+<!-- -------------------------------------------------------------------------------------------------------------------------------------- belum ku cek -->
     <div class="row">
         <div class="col-lg-6">
             <h3>Daftar Mahasiswa</h3>

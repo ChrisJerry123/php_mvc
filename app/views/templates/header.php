@@ -27,6 +27,9 @@
                         <a class="nav-link" href="<?php echo BASEURL ?>/mahasiswa">Mahasiswa</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASEURL ?>/dosen">Dosen</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASEURL ?>/about">About</a>
                     </li>
                 </ul>
