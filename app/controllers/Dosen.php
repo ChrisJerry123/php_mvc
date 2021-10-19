@@ -51,6 +51,23 @@
             }
         }
 
+
+        public function getUbah()
+        {
+            echo json_encode($this->model('Mahasiswa_model')->getDosenById($_POST['id']));
+        }
+
+
+        public function ubah()
+        {
+            $data['judul'] = "Tambah Dosen";
+            // $data['dosen'] = $this->model('Dosen_model')->getDosenById();
+
+            $this->view('templates/header', $data);
+            $this->view('dosen/ubah', $data);
+            $this->view('templates/footer');
+        }
+
         
     }
 

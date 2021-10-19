@@ -1,13 +1,13 @@
-<div class="container" id="form_dosen">
+<div class="container">
 
-    <h5 class="mt-5">Tambah Data Dosen</h5>
+    <h5 class="mt-5">Ubah Data Dosen</h5>
     <div class="col-lg-6">
-        <form action="<?= BASEURL; ?>/dosen/tambahProcess" method="post">
+        <form action="<?= BASEURL; ?>/dosen/editProcess" method="post">
             <input type="hidden" name="id" id="id">
             <!-- INPUT NAMA -->
             <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" autocomplete="off"> <!-- tambahkan atribute name="nama" -->
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" autocomplete="off" value="indo"> <!-- tambahkan atribute name="nama" -->
             </div>
             <!-- INPUT NIP -->
             <div class="form-group">
@@ -35,9 +35,9 @@
                 </select>
             </div>
 
-            <a class="btn btn-outline-dark" href="<?= BASEURL; ?>/dosen" role="button">Kembali</a>
-            <button type="reset" class="btn btn-secondary">Reset</button>
-            <button type="submit" class="btn btn-primary">Simpan</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-secondary">Close</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
         </form> <!-- TIDAK DI DALAM DIV MODAL-BODY, KARENA BUTTON INI TERMASUK KE DALAM FORM JUGA -->
     </div>
 
