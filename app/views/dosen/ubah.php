@@ -7,7 +7,7 @@
             <!-- INPUT NAMA -->
             <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" autocomplete="off" value="indo"> <!-- tambahkan atribute name="nama" -->
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" autocomplete="off" value=""> <!-- tambahkan atribute name="nama" -->
             </div>
             <!-- INPUT NIP -->
             <div class="form-group">
