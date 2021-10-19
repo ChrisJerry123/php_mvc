@@ -2,8 +2,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <!-- Samakan columnnya dengan column yang ada di modal button -->
-            <!-- Memanggil kelas Flasher -->
+            <!-- MEMANGGIL FLASHER -->
             <?php Flasher::flash(); ?>
         </div>
     </div>
@@ -32,19 +31,20 @@
             <!-- END FORM CARI -->
         </div>
     </div>
-<!-- -------------------------------------------------------------------------------------------------------------------------------------- belum ku cek -->
+
+    
     <div class="row">
         <div class="col-lg-6">
             <h3>Daftar Mahasiswa</h3>
             <!-- Tampil data Mahasiswa -->
             <ul class="list-group">
-                <?php foreach ($data['mhs'] as $mhs) : ?>
+                <?php foreach ($data['dosen'] as $dosen) : ?>
                     <!-- Nama Mahasiswa -->
-                    <li class="list-group-item "><?php echo $mhs['nama']; ?>
+                    <li class="list-group-item "><?php echo $dosen['nama']; ?>
                         <!-- Tombol aksi crud-->
-                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Apakah anda yankin ingin menghapus mahasiswa ini?'); ">Hapus</a>
-                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-secondary float-right ml-1 mr-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?php echo $mhs['id']; ?>">Ubah</a>
-                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right ml-1 mr-1">Detail</a>
+                        <a href="<?= BASEURL; ?>/dosen/hapus/<?= $dosen['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Apakah anda yankin ingin menghapus data dosen ini?'); ">Hapus</a>
+                        <a href="<?= BASEURL; ?>/dosen/ubah/<?= $dosen['id']; ?>" class="badge badge-secondary float-right ml-1 mr-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?php echo $mhs['id']; ?>">Ubah</a>
+                        <a href="<?= BASEURL; ?>/dosen/detail/<?= $dosen['id']; ?>" class="badge badge-primary float-right ml-1 mr-1">Detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
