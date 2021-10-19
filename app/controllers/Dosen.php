@@ -25,12 +25,30 @@
 
         public function hapus($id)
         {
-            $data['judul'] = "Hapus Data Dosen";
-            $data['dosen'] = $this->model('Dosen_model')->hapus($id);
+            if ($this->model('Dosen_model')->hapusDosen($id) > 0) {
+                header('Location: ' . BASEURL . '/dosen' );
+                exit;
+            }
+        }
 
-            $this->view('templates/header');
-            $this->view('dosen/hapus');
+        public function tambah()
+        {
+            $data['judul'] = "Tambah Dosen";
+            // $data['dosen'] = $this->model('Dosen_model')->getDosenById();
+
+            $this->view('templates/header', $data);
+            $this->view('dosen/tambah', $data);
             $this->view('templates/footer');
+            
+        }
+
+        public function tambahProcess()
+        {
+            if ($this->model('Dosen_model')->tambahDosen($_POST) > 0) {
+    
+                header('Location: ' . BASEURL . '/dosen');
+                exit;
+            }
         }
 
         

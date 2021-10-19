@@ -10,9 +10,8 @@
     <div class="row mb-3">
         <div class="col-lg-6">
             <!-- MODAL BUTTON -->
-            <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#formModal"><!-- kalau error, coba data-toggle dan data-target nilainya ditambah dosen -->
-                Tambah Mahasiswa
-            </button>
+            <!-- <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#formModal"> --><!-- kalau error, coba data-toggle dan data-target nilainya ditambah dosen -->
+            <a href="<?php echo BASEURL; ?>/dosen/tambah"><button type="button" class="btn btn-primary">Tambah Mahasiswa</button></a>
             <!-- END MODAL BUTTON -->
         </div>
     </div>
@@ -35,7 +34,7 @@
     
     <div class="row">
         <div class="col-lg-6">
-            <h3>Daftar Mahasiswa</h3>
+            <h3>Daftar Dosen</h3>
             <!-- Tampil data Mahasiswa -->
             <ul class="list-group">
                 <?php foreach ($data['dosen'] as $dosen) : ?>
