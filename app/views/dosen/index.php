@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    
+
     <div class="row">
         <div class="col-lg-6">
             <h3>Daftar Dosen</h3>
@@ -41,7 +41,7 @@
                     <li class="list-group-item "><?php echo $dosen['nama']; ?>
                         <!-- Tombol aksi crud-->
                         <a href="<?= BASEURL; ?>/dosen/hapus/<?= $dosen['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Apakah anda yankin ingin menghapus data dosen ini?'); ">Hapus</a>
-                        <a href="<?= BASEURL; ?>/dosen/ubah/<?= $dosen['id']; ?>" class="badge badge-secondary float-right ml-1 mr-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?php echo $mhs['id']; ?>">Ubah</a>
+                        <a href="<?= BASEURL; ?>/dosen/ubah/<?= $dosen['id']; ?>" class="badge badge-secondary float-right ml-1 mr-1">Ubah</a>
                         <a href="<?= BASEURL; ?>/dosen/detail/<?= $dosen['id']; ?>" class="badge badge-primary float-right ml-1 mr-1">Detail</a>
                     </li>
                 <?php endforeach; ?>

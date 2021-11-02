@@ -33,7 +33,7 @@ class Mahasiswa_model
     /* 
     private $dbh; // database handler
     private $stmt; // query
- */
+    */
     /* CONSTRUCTORNYA DI PINDAH CLASS DATABASE AGAR LEBIH AMAN
     public function __construct()
     {
@@ -133,7 +133,7 @@ class Mahasiswa_model
 
     public function cariDataMahasiswa()
     {
-        $keyword = $_POST  ['keyword'];
+        $keyword = $_POST['keyword'];
         $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword "; // KALAU PDO, LIKE %% DI AKHIR SAJA
 
         $this->db->query($query);
